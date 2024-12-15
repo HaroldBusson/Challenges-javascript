@@ -20,13 +20,29 @@ const imcBernard = {
     name: Bernard,
     weight: 78,
     tall: 1.69,
-    calcBMI: function(){
+    calcBMI: function(weight, tall){        // methode calcBMI
+        return this.weight / (this.tall**2) // objets implémenter dans les calculs
 
     }
 }
 
+imcBernard.calcBMI(78, 1.69)
+
 const imcMarcel = {
     name: Marcel,
     weight: 92,
-    tall: 1.95
+    tall: 1.95,
+    calcBMI: function(weight, tall){        // methode calcBMI
+        return this.weight / (this.tall**2) // objets implémenter dans les calculs
+    }
+}
+
+imcMarcel.calcBMI(921, 1.95)
+
+// Comparaison des IMC
+
+if (imcBernard > imcMarcel){
+  console.log(`L’IMC de ${imcBernard.name} (${imcBernard.calcBMI})est plus élevé que celui de ${imcMarcel.name}(${imcMarcel.calcBMI})`)  
+}else{
+    console.log(`L’IMC de ${imcMarcel.name} (${imcMarcel.calcBMI})est plus élevé que celui de ${imcBernard.name}(${imcBernard.calcBMI})`)  
 }
